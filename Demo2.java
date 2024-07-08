@@ -1,14 +1,18 @@
 
 
 
-int binarySearch(items[],key){
-	
-	
-	}
+
 
 
 
 class Demo2{
+	int binarySearch(items[],key){
+	
+	
+	}
+	
+	
+	
 	public static void main(String[] args){
 		
 		int key = 62;
