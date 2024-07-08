@@ -12,9 +12,19 @@ class Demo2{
 	
 	while(left <= right){
 		int mid = (int)(right+left)/2;
+		if(key == mid){
+			System.out.println("Key found!");
+			return mid;
+			}
+			
+		if(key < items[mid]){
+			right = mid -1;
+			}else{
+				left = mid +1;
+				}	
 		}
-		System.out.println("");
-	return right;
+		
+	return -1;
 	}
 	
 	
@@ -23,8 +33,11 @@ class Demo2{
 		
 		int key = 62;
 		int items[] ={1,2,6,7,9,10,11,17,20,33,34,36,48,52,55,58,59,60,62,66,69,70,78,89,91,96,100};
-		binarySearch(items,key);
-		System.out.println(t);
+		int finalValue = binarySearch(items,key);
+
+      
+	System.out.println("Key is founded in : "+finalValue);
+			
 		}
 	
 	}
