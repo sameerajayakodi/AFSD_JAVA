@@ -6,9 +6,10 @@
 
 
 class Demo2{
-	int binarySearch(items[],key){
+	public static int binarySearch(int items[],int key){
 	
-	
+	int mid =2 ;
+	return -1;
 	}
 	
 	
