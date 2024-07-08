@@ -11,9 +11,9 @@ class Demo2{
 	int right = items.length-1;
 	
 	while(left <= right){
-		int mid = (int)(right+left)/2;
+		int mid = left + (right - left) / 2;
 		if(key == mid){
-			System.out.println("Key found!");
+			
 			return mid;
 			}
 			
