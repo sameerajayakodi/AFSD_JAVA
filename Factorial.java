@@ -1,6 +1,6 @@
 
 class Factorial{
-	int factorial(int n){
+	static int factorial(int n){
 		if(n==0){
 		return 1;
 		}else{
@@ -10,10 +10,10 @@ class Factorial{
 	
 	
 	public static void main(String [] args){
+		int value = 5;
+		int result = factorial(value);
 		
-		factorial(5);
-		
-		
+		System.out.println("Factorial value of the " + value + " is "+ result);
 	
 	}
 	
