@@ -9,7 +9,10 @@ class Student{
 			}else if (city == "Noida"){
 				System.out.println("city is noida");  
 				
-				}
+				}else if(city == "Agra") {
+					
+					
+					}
 		
 		}
 	
