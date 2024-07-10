@@ -5,7 +5,7 @@ class Student{
 	int y = 1;
 	int z = x + y;
 	
-	if(z>6){
+	if(z>7){
 		System.out.println("X + y Greater than 5");
 		}else{
 			System.out.println("X + y Less than 5");
