@@ -31,7 +31,8 @@ class Student{
 			System.out.println("X + y Less than 5");
 			
 			}
+			
+			func1();
 	}
 
-	
 	}
