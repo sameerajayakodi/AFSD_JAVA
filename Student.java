@@ -12,7 +12,10 @@ class Student{
 				}else if(city == "Agra") {
 					System.out.println("city is agra");  
 					
-					}
+					}else{
+						System.out.println(city);  
+						
+						}
 		
 		}
 	
