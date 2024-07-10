@@ -7,7 +7,7 @@ class Student{
 			
 			System.out.println("city is meerut");  
 			}else if (city == "Noida"){
-				
+				System.out.println("city is noida");  
 				
 				}
 		
