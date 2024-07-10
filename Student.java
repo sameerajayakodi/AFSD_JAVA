@@ -5,7 +5,7 @@ class Student{
 		String city = "Delhi";  
 		if(city == "Meerut"){
 			
-			
+			System.out.println("city is meerut");  
 			}
 		
 		}
