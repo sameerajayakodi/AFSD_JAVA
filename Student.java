@@ -2,7 +2,7 @@ class Student{
 	
 	static void func1(){
 		
-		
+		String city = "Delhi";  
 		
 		}
 	
