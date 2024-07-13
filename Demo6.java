@@ -32,6 +32,21 @@ class Demo6{
 		double averageSalary = (emp1Salary+emp2Salary+emp3Salary+emp4Salary)/4;
 		System.out.println("Average Salary is : "+averageSalary);
 		
+		double emp1NewSalary = emp1Salary + emp1Salary*0.04;
+		System.out.println("Employee 1 New Salary : "+emp1NewSalary);
+		
+		double emp2NewSalary = emp2Salary + emp2Salary*0.04;
+		System.out.println("Employee 2 New Salary : "+emp2NewSalary);
+		
+		double emp3NewSalary = emp3Salary + emp3Salary*0.04;
+		System.out.println("Employee 3 New Salary : "+emp3NewSalary);
+		
+		double emp4NewSalary = emp4Salary + emp4Salary*0.04;
+		System.out.println("Employee 4 New Salary : "+emp4NewSalary);
+		
+		
+		
+		
 		}
 	
 	}
