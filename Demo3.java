@@ -21,7 +21,7 @@ class Demo3{
 		double rainData = 5.24;
 		char mathsGrade = 'A';
 		String myname = "Sameera";
-		boolean isSmoke = true;
+		boolean isSmoke = false;
 		}
 	
 	}
