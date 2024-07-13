@@ -1,9 +1,23 @@
+import java.util.Scanner;
+
 class Demo4{
 	public static void main(String args[]){
-		String studentName = "Sameera Jayakodi";
-		double chemistry = 56.2;
-		double physics = 85.5;
-		double maths = 78.3;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter Your Name :");
+		String studentName = scan.next();
+		
+		
+		System.out.print("Enter Your Chemistry Mark  :");
+		double chemistry = scan.nextDouble();
+		
+		System.out.print("Enter Your Physics Mark  :");
+		double physics = scan.nextDouble();
+		
+		System.out.print("Enter Your Maths Mark  :");
+		double maths = scan.nextDouble();
+		
 		
 		double average = (chemistry + physics + maths)/3;
 		
