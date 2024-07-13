@@ -14,7 +14,7 @@ class Demo3{
 		   System.out.println("Sameera");
 		   
 		   //int ---> data type
-		   //ae --> variable name
+		   //age --> variable name
 		   //27 ---> date
 		 
 		int studentAge = 27;
