@@ -42,6 +42,10 @@ class Demo7{
 		double var1 = var;
 		System.out.println(var1);
 		
+		// +, - , * , / , % ----> arithmatic operators
+		// > , < , >= ,<= , == , != -------> relational operators
+		// && , || ------> logical operators
+		
 		
 		
 		}
