@@ -4,7 +4,7 @@ import java.util.Scanner;
 class Demo7{
 	
 	public static void main(String args[]){
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		
 		
 		
@@ -15,7 +15,7 @@ class Demo7{
 		
 		System.out.println("Your Total Amount is : " + newAmount);
 		
-		//pre maid class / software eg Scanner
+		//pre maid class / software eg Scanner*/
 		
 		
 		byte val = -126;
@@ -30,10 +30,19 @@ class Demo7{
 		
 		//byte -> short -> char -> int -> long -> float -> double   ---> convertion    <----- casting
 		
-		char val1 = 'a';
+		//documentation and API documentation
+		
+		char val1 = 'A';
 		
 		byte val2 = (byte)val1;
 		System.out.println(val2);
+		
+		
+		int var = 12;
+		double var1 = var;
+		System.out.println(var1);
+		
+		
 		
 		}
 }
