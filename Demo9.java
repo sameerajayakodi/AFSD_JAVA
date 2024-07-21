@@ -23,8 +23,11 @@ class Demo9{
 		
 		if(totalIncome<50000){
 			
-			System.out.print(customerName+ " you are Aswasuma eligible**. ");
-			}
+			System.out.println(customerName+ " you are Aswasuma eligible**. ");
+			}else{
+				
+				System.out.println(customerName+ " you are NOT Aswasuma eligible!.");
+				}
 		
 		
 		
