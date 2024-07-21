@@ -14,23 +14,20 @@ class Demo10{
 		
 		if(userAge>18){
 			//program
-			Random random = new Random();
-			int answer = random.nextInt(6);
 			
-			System.out.print(userName + " You have "+ answer + " babies in 2030!!");
+			if(userAge<45){
+				Random random = new Random();
+			    int answer = random.nextInt(6);
 			
+			    System.out.print(userName + " You have "+ answer + " babies in 2030!!");
+				
+				}else{
+			      System.out.print(userName + "Your are over matured!");
+			    }
 			}else{
 				System.out.print(userName + " Your are not eligible to this program!");
-			}
+		    }
 		
-	}
+	 }
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		}
+}
