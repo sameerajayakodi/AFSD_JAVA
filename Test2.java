@@ -29,7 +29,7 @@ class Test2 {
 		System.out.print("Enter Student Address : ");
 		String studentLoacation = sc.next();
 		
-		System.out.print(studentName + "We will send you a letter to the " + studentLoacation);
+		System.out.print(studentName + " We will send you a letter to the " +studentName+" " +studentLoacation);
 			
 			} 
 		}
