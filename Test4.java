@@ -26,11 +26,11 @@ class Test4 {
 				
 				}else{
 					
-				if(month.equals("january") ||month.equals("march") ||month.equals("may") ||month.equals("july") || month.equals("september") || month.equals("november") ){
+				if(month.equals("january") ||month.equals("march") ||month.equals("may") ||month.equals("july") || month.equals("september") || month.equals("october") || month.equals("december")){
 				System.out.println(month + " has 31 Days.");
 				}else{
 					
-					if(month.equals("april") ||month.equals("june") ||month.equals("august") ||month.equals("october") || month.equals("december")){
+					if(month.equals("april") ||month.equals("june") ||month.equals("august") ||month.equals("november")){
 					System.out.println(month + " has 30 Days.");
 					}else{
 						System.out.println(month + " is Invalid!");
