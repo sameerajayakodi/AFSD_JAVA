@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 class BinarySearch {
-	
+	//Binary Search algorithm
 public static void binarySearch(int arr[] , int key ){
 	int first  = 0;
 	int last = arr.length-1;
@@ -26,17 +26,24 @@ public static void binarySearch(int arr[] , int key ){
 		
 		}	
 }
-		
+
+//Linear Search Algorithm
+
+public static void linearSearch(int arr[],int key){
+	
+	
+	}		
 	
 	
 	
     public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int arr[] = {2,3,4,5,6,7,8,9,10};
-		int key = 7;
+		int key = 2;
 		
 		
 		binarySearch(arr , key);
+		linearSearch(arr,key);
 	}
 		
 		
