@@ -12,6 +12,7 @@ public static void binarySearch(int arr[] , int key ){
 	while(first<=last){
 		if(arr[mid] == key){}
 		System.out.println(key+" is founded by index : "+mid);
+		break;
 		}else if(key < arr[mid]){
 			last = mid - 1;
 			}else{
