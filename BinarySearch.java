@@ -10,7 +10,7 @@ public static void binarySearch(int arr[] , int key ){
 	int mid = (first+last)/2;
 	
 	while(first<=last){
-		if(arr[mid] == key){}
+		if(arr[mid] == key){
 		System.out.println(key+" is founded by index : "+mid);
 		break;
 		}else if(key < arr[mid]){
@@ -18,10 +18,15 @@ public static void binarySearch(int arr[] , int key ){
 			}else{
 				first = mid +1;
 				}
-	
-	
-	
+			mid = (first+last)/2;	
 	}
+	
+	if(first>last){
+		System.out.println("Key is not found!");
+		
+		}	
+}
+		
 	
 	
 	
