@@ -30,7 +30,9 @@ public static void binarySearch(int arr[] , int key ){
 //Linear Search Algorithm
 
 public static void linearSearch(int arr[],int key){
-	
+	for(int i=0; i<arr.){
+		
+		}
 	
 	}		
 	
