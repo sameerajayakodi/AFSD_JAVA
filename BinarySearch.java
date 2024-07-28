@@ -30,8 +30,19 @@ public static void binarySearch(int arr[] , int key ){
 //Linear Search Algorithm
 
 public static void linearSearch(int arr[],int key){
-	for(int i=0; i<arr.){
+	boolean founded = true;
+	while(founded){
+		for(int i=0;i<arr.length;i++){
+			if(key == arr[i]){
+			System.out.println(key+" is founded in "+i+" th index");
+			founded = true;
+			}else{
+				System.out.println(key+" is not founded");
+				}
+			
+			}
 		
+				
 		}
 	
 	}		
@@ -44,7 +55,7 @@ public static void linearSearch(int arr[],int key){
 		int key = 2;
 		
 		
-		binarySearch(arr , key);
+		//binarySearch(arr , key);
 		linearSearch(arr,key);
 	}
 		
