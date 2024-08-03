@@ -8,6 +8,8 @@ class Test16 {
 			
 			//variable scope
 			
+			
+			
 			}
 		
 		}
