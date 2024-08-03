@@ -5,7 +5,7 @@ class Test16 {
 		Scanner sc = new Scanner(System.in);
 		double totalMarks = 0.0;
 		
-		for(int i=0;i<5;i++){
+		for(int i=0;i<7;i++){
 			System.out.print("Enter marks for student "+ (i+1) + " : ");
 			double val = sc.nextDouble();
 			
@@ -13,6 +13,9 @@ class Test16 {
 			
 			
 			}
+			System.out.println("Total Marks in all Students = "+totalMarks);
+			double avg = totalMarks/7;
+			System.out.println("Average Marks : "+avg);
 		
 		}
 }		
