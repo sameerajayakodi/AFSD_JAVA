@@ -10,7 +10,9 @@ class Test21 {
 			int val = sc.nextInt();
 			ages[i] = val;
 			}
-		
+		for(int i=0; i< 5;i++){
+		 System.out.println(ages[i]);
+		}
 		
 	}
 }	
