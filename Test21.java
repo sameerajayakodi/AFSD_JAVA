@@ -11,7 +11,7 @@ class Test21 {
 			ages[i] = val;
 			}
 		for(int i=0; i< 5;i++){
-		 System.out.println(ages[i]);
+		 System.out.print(ages[i]);
 		}
 		
 	}
