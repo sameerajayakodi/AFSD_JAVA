@@ -37,7 +37,7 @@ class Test22 {
 				poorCount++;
 			}
 			
-			allTotalIncome += familiesTotalIncome[i];
+			
 		}
 		
 		averageIncome =allTotalIncome / 20;
