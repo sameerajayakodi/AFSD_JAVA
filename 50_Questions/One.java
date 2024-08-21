@@ -18,9 +18,22 @@ public class One {
         double totalMarks = 0;
         for(int i=0;i<15;i++){
 			for(int j=0;j<5;j++){
-				double totalMarks += marksArray[i][j];
+				totalMarks += marksArray[i][j];
 			}
 			totalMarksArray[i]=totalMarks;
+		}
+		
+		double averageMarksArray[] = new double[15];
+		for(int i=0;i<15;i++){
+			averageMarksArray[i] = totalMarksArray[i]/5;
+		}
+		
+		for(int i=0;i<15;i++){
+			if(averageMarksArray[i] >= 40.0){
+				System.out.println("Student "+(i+1)+" You are Passed!");
+			}else{
+				System.out.println("Student "+(i+1)+" You are Failed!!");
+			}
 		}
 
     }
