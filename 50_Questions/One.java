@@ -4,41 +4,36 @@ public class One {
     public static void main(String[] args) {
 		Scanner sc  = new Scanner(System.in);
 	
-        int attendanceArray[][] = new int[30][22];
-        int totalAttendance[] = new int[30];
+       int students = 20;
+        int marks[] = new int[students];
+        int gradeACount	 = 0, gradeBCount = 0, gradeCCount = 0, gradeDCount = 0, gradeFCount = 0;
 
-        for (int i = 0; i < 30; i++) {
-            System.out.println("Enter attendance for Student " + (i + 1) + " (1 for present, 0 for absent):");
-            for (int j = 0; j < 22; j++) {
-                System.out.print("Day " + (j + 1) + ": ");
-                attendanceArray[i][j] = sc.nextInt();
-            }
-            System.out.println();
-        }
+      
+        for (int i = 0; i < students; i++) {
+            System.out.print("Enter marks for Student " + (i + 1) + ": ");
+            marks[i] = sc.nextInt();
 
-       
-        for (int i = 0; i < 30; i++) {
-            for (int j = 0; j < days; j++) {
-                totalAttendance[i] += attendanceArray[i][j];
-            }
-        }
 
-        
-        int satisfactoryAttendanceCount = 0;
-        for (int i = 0; i < 30; i++) {
-            double attendancePercentage = (totalAttendance[i] / (double)22) * 100;
-            if (attendancePercentage >= 75.0) {
-                satisfactoryAttendanceCount++;
+            if (marks[i] >= 90) {
+                gradeACount++;
+            } else if (marks[i] >= 80) {
+                gradeBCount++;
+            } else if (marks[i] >= 70) {
+                gradeCCount++;
+            } else if (marks[i] >= 60) {
+                gradeDCount++;
+            } else {
+                gradeFCount++;
             }
         }
 
        
-        double satisfactoryPercentage = (satisfactoryAttendanceCount / (double)30) * 100;
-        if (satisfactoryPercentage > 80.0) {
-            System.out.println("Satisfactory attendance");
-        } else {
-            System.out.println("Poor attendance");
-        }
+        System.out.println("Grade A: " + gradeACount);
+        System.out.println("Grade B: " + gradeBCount);
+        System.out.println("Grade C: " + gradeCCount);
+        System.out.println("Grade D: " + gradeDCount);
+        System.out.println("Grade F: " + gradeFCount);
+
 
     }
 }
