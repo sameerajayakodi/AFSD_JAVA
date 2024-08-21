@@ -3,34 +3,41 @@ public class One {
 
     public static void main(String[] args) {
 		Scanner sc  = new Scanner(System.in);
-	  double salesArray[] = new double[10];
-        double totalSales = 0;
+	
+        int attendanceArray[][] = new int[30][22];
+        int totalAttendance[] = new int[30];
 
-        
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Enterfor salesperson " + (i + 1) + ": ");
-            salesArray[i] = sc.nextDouble();
-            totalSales += salesArray[i];
+        for (int i = 0; i < 30; i++) {
+            System.out.println("Enter attendance for Student " + (i + 1) + " (1 for present, 0 for absent):");
+            for (int j = 0; j < 22; j++) {
+                System.out.print("Day " + (j + 1) + ": ");
+                attendanceArray[i][j] = sc.nextInt();
+            }
+            System.out.println();
         }
 
-        
-        double averageSales = totalSales / 10;
-        System.out.println("Average sales: " + averageSales);
-
-        
-        int belowAverageCount = 0;
-        for (int i = 0; i < 10; i++) {
-            if (salesArray[i] < averageSales) {
-                belowAverageCount++;
+       
+        for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < days; j++) {
+                totalAttendance[i] += attendanceArray[i][j];
             }
         }
 
         
-        System.out.println("Number of salespersons with below average sales: " + belowAverageCount);
+        int satisfactoryAttendanceCount = 0;
+        for (int i = 0; i < 30; i++) {
+            double attendancePercentage = (totalAttendance[i] / (double)22) * 100;
+            if (attendancePercentage >= 75.0) {
+                satisfactoryAttendanceCount++;
+            }
+        }
 
        
-        if (belowAverageCount > 5) {
-            System.out.println("Sales team needs improvement.");
+        double satisfactoryPercentage = (satisfactoryAttendanceCount / (double)30) * 100;
+        if (satisfactoryPercentage > 80.0) {
+            System.out.println("Satisfactory attendance");
+        } else {
+            System.out.println("Poor attendance");
         }
 
     }
