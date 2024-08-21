@@ -9,11 +9,10 @@ public class One {
 			System.out.println("--Enter Student "+(i+1)+" Marks--");
 			System.out.println("");
             for(int j=0;j<5;j++){
-				System.out.print("Enter Subject"+(j+1)+" Marks : ");
+				System.out.print("Enter Subject "+(j+1)+" Marks : ");
 				marksArray[i][j] = sc.nextDouble();
 			}
         }
-        
         
         double totalMarks = 0;
         for(int i=0;i<15;i++){
@@ -32,7 +31,7 @@ public class One {
 			if(averageMarksArray[i] >= 40.0){
 				System.out.println("Student "+(i+1)+" You are Passed!");
 			}else{
-				System.out.println("Student "+(i+1)+" You are Failed!!");
+				System.out.println("Student "+(i+1)+" You are Failed!");
 			}
 		}
 
