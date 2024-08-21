@@ -2,11 +2,6 @@ import java.util.Scanner;
 public class One {
 
     public static void main(String[] args) {
-        
-        int numDays = 30;
-        double temperatureThreshold = 30.0;
-        int citiesThreshold = 3;
-        
         double[][] temperatures = new double[5][30];
         Scanner scanner = new Scanner(System.in);
         
@@ -18,7 +13,7 @@ public class One {
             }
         }
         
-        int citiesAboveThreshold = 0;
+        int aboveTemp = 0;
         double totalTemperature = 0;
         double totalDays = 5* 30;
         
@@ -34,15 +29,15 @@ public class One {
             System.out.println("City " + (i + 1) + ":");
             System.out.println("  Average Temperature: " + cityAverageTemperature);
             
-            if (cityAverageTemperature > temperatureThreshold) {
-                citiesAboveThreshold++;
+            if (cityAverageTemperature > 30) {
+                aboveTemp++;
             }
         }
         
         double overallAverageTemperature = totalTemperature / totalDays;
         System.out.println("Overall Average Temperature: " + overallAverageTemperature);
         
-        if (citiesAboveThreshold >= citiesThreshold) {
+        if (aboveTemp >= 3) {
             System.out.println("Heat Wave Alert!");
         } else {
             System.out.println("Normal Weather.");
