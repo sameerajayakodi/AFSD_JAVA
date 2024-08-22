@@ -39,11 +39,11 @@ public class One {
         double engagementPercentage = (numStudentsWith4OrMoreCompleted / numStudents) * 100;
         String engagementLevel = (engagementPercentage >= 80) ? "Good Engagement" : "Low Engagement";
 
-        System.out.println("\nStudent ID\tTotal Completed");
+        System.out.println("Student ID Total Completed");
         for (int i = 0; i < numStudents; i++) {
             System.out.println((i + 1) + "\t\t" + totalCompleted[i]);
         }
-        System.out.println("\nAverage Completion Rate: " + averageCompletionRate + "%");
+        System.out.println("Average Completion Rate: " + averageCompletionRate + "%");
         System.out.println("Engagement Level: " + engagementLevel);
     }
 }
