@@ -1,49 +1,47 @@
 import java.util.Scanner;
+
 public class One {
 
     public static void main(String[] args) {
- Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        
+        String[] studentNames = new String[20];
+        int[] studentAges = new int[20];
+        
+        
+        int group18To22 = 0;
+        int group23To30 = 0;
+        int group31To40 = 0;
+        int groupAbove40 = 0;
 
-        int numStudents = scanner.nextInt();
-        int numAssignments = scanner.nextInt();
+        
+        for (int i = 0; i < 20; i++) {
+            System.out.println("Enter the name of student " + (i + 1) + ": ");
+            studentNames[i] = scanner.nextLine();
 
-        int[][] submissionData = new int[numStudents][numAssignments];
+            System.out.println("Enter the age of " + studentNames[i] + ": ");
+            studentAges[i] = scanner.nextInt();
+            scanner.nextLine(); 
 
-        for (int i = 0; i < numStudents; i++) {
-            System.out.println("Student " + (i + 1));
-            for (int j = 0; j < numAssignments; j++) {
-                System.out.print("Assignment " + (j + 1) + " (1 for submitted, 0 for not submitted): ");
-                submissionData[i][j] = scanner.nextInt();
+            
+            if (studentAges[i] >= 18 && studentAges[i] <= 22) {
+                group18To22++;
+            } else if (studentAges[i] >= 23 && studentAges[i] <= 30) {
+                group23To30++;
+            } else if (studentAges[i] >= 31 && studentAges[i] <= 40) {
+                group31To40++;
+            } else if (studentAges[i] > 40) {
+                groupAbove40++;
             }
         }
 
-        int[] totalCompleted = new int[numStudents];
-        for (int i = 0; i < numStudents; i++) {
-            for (int j = 0; j < numAssignments; j++) {
-                totalCompleted[i] += submissionData[i][j];
-            }
-        }
+        
+        System.out.println("Count of Students in Age Groups:");
+        System.out.println("18-22 years: " + group18To22);
+        System.out.println("23-30 years: " + group23To30);
+        System.out.println("31-40 years: " + group31To40);
+        System.out.println("Above 40 years: " + groupAbove40);
 
-        double totalCompletedAssignments = 0;
-        for (int i = 0; i < numStudents; i++) {
-            totalCompletedAssignments += totalCompleted[i];
-        }
-        double averageCompletionRate = (totalCompletedAssignments / (numStudents * numAssignments)) * 100;
-
-        int numStudentsWith4OrMoreCompleted = 0;
-        for (int i = 0; i < numStudents; i++) {
-            if (totalCompleted[i] >= 4) {
-                numStudentsWith4OrMoreCompleted++;
-            }
-        }
-        double engagementPercentage = (numStudentsWith4OrMoreCompleted / numStudents) * 100;
-        String engagementLevel = (engagementPercentage >= 80) ? "Good Engagement" : "Low Engagement";
-
-        System.out.println("Student ID Total Completed");
-        for (int i = 0; i < numStudents; i++) {
-            System.out.println((i + 1) + "\t\t" + totalCompleted[i]);
-        }
-        System.out.println("Average Completion Rate: " + averageCompletionRate + "%");
-        System.out.println("Engagement Level: " + engagementLevel);
+        
     }
 }
