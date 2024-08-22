@@ -4,42 +4,32 @@ public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[][] steps = new int[25][30];
-        int[] totalSteps = new int[25];
-        int[] daysMetGoal = new int[25];
-        int participantsMetGoal = 0;
+        int[] ratings = new int[150];
+        int[] ratingCounts = new int[5];
+        double totalRating = 0;
 
-       
-        System.out.println("Enter daily steps for 25 participants over 30 days:");
-        for (int i = 0; i < 25; i++) {
-            System.out.println("Enter steps for Participant " + (i + 1) + ":");
-            for (int j = 0; j < 30; j++) {
-                steps[i][j] = scanner.nextInt();
-                totalSteps[i] += steps[i][j];
-                if (steps[i][j] >= 10000) {
-                    daysMetGoal[i]++;
-                }
+        for (int i = 0; i < 150; i++) {
+            System.out.print("Customer " + (i + 1) + " rating (1-5): ");
+            ratings[i] = scanner.nextInt();
+            totalRating += ratings[i];
+            if (ratings[i] >= 1 && ratings[i] <= 5) {
+                ratingCounts[ratings[i] - 1]++;
             }
         }
 
-       
-        System.out.println("Total and Average Steps for each Participant:");
-        for (int i = 0; i < 25; i++) {
-            double averageSteps = totalSteps[i] / 30.0;
-            System.out.println("Participant " + (i + 1) + ": Total Steps = " + totalSteps[i] + 
-                               ", Average Steps = " + averageSteps);
-            if (daysMetGoal[i] >= 20) {
-                participantsMetGoal++;
-            }
+        double averageRating = totalRating / 150.0;
+        System.out.println("Rating Counts:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println((i + 1) + " stars: " + ratingCounts[i]);
+        }
+        System.out.printf("Average Rating:"+averageRating);
+
+        if (averageRating >= 4) {
+            System.out.println("Highly Rated Product");
+        } else {
+            System.out.println("Product Needs Improvement");
         }
 
         
-        if ((participantsMetGoal / 25.0) > 0.7) {
-            System.out.println("Great Effort!");
-        } else {
-            System.out.println("Keep Pushing.");
-        }
-
-      
     }
 }
