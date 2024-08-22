@@ -4,39 +4,32 @@ public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[][] workHours = new int[25][20];
-        int employeesWithComplianceIssue = 0;
+        double[][] waterUsage = new double[15][30];
+        double[] totalUsage = new double[15];
+        int apartmentsAbove = 0;
 
-        for (int i = 0; i < 25; i++) {
-            System.out.println("Enter work hours for Employee " + (i + 1) + " over 20 days:");
-            boolean lessThan6Hours = false;
-            int totalHours = 0;
-            for (int j = 0; j < 20; j++) {
-                workHours[i][j] = scanner.nextInt();
-                totalHours += workHours[i][j];
-                if (workHours[i][j] < 6) {
-                    lessThan6Hours = true;
-                }
+        for (int i = 0; i < 15; i++) {
+            double total = 0;
+            System.out.println("Enter daily water usage (in liters) for Apartment " + (i + 1) + ":");
+            for (int j = 0; j < 30; j++) {
+                waterUsage[i][j] = scanner.nextDouble();
+                total += waterUsage[i][j];
             }
-            if (lessThan6Hours) {
-                employeesWithComplianceIssue++;
+            totalUsage[i] = total;
+            if (total > 10000) {
+                apartmentsAbove++;
             }
         }
 
-        System.out.println("Total and Average Work Hours for Each Employee:");
-        for (int i = 0; i < 25; i++) {
-            int totalHours = 0;
-            for (int j = 0; j < 20; j++) {
-                totalHours += workHours[i][j];
-            }
-            double averageHours = totalHours / 20.0;
-            System.out.printf("Employee" + (i + 1) +"Total Hours = "+totalHours+" Average Hours ="+ averageHours);
+        System.out.println("Total Water Usage for Each Apartment:");
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Apartment " + (i + 1) + ": Total Usage = " + totalUsage[i] + " liters");
         }
 
-        if ((employeesWithComplianceIssue / 25.0) > 0.50) {
-            System.out.println("Work Hour Compliance Issue");
+        if ((apartmentsAbove / 15.0) >= 0.50) {
+            System.out.println("High Water Usage");
         } else {
-            System.out.println("Good Compliance");
+            System.out.println("Water Usage Within Limits");
         }
 
       
