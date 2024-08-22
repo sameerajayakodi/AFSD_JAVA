@@ -1,28 +1,32 @@
 import java.util.Scanner;
 
-public class One {
+public class One{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] dailyOccupancy = new int[30];
-        int totalOccupiedBedDays = 0;
+        double[] monthlyProfits = new double[12];
+        double totalProfit = 0;
+        int monthsAbove10000 = 0;
 
-        for (int i = 0; i < 30; i++) {
-            System.out.print("Day " + (i + 1) + ": ");
-            dailyOccupancy[i] = scanner.nextInt();
-            totalOccupiedBedDays += dailyOccupancy[i];
+        for (int i = 0; i < 12; i++) {
+            System.out.print("Profit for Month " + (i + 1) + ": ");
+            monthlyProfits[i] = scanner.nextDouble();
+            totalProfit += monthlyProfits[i];
+            if (monthlyProfits[i] > 10000) {
+                monthsAbove10000++;
+            }
         }
 
-        double averageOccupancyRate = (totalOccupiedBedDays / 30.0) / 100.0 * 100;
-        System.out.printf("Total Occupied Bed-Days:"+totalOccupiedBedDays);
-        System.out.printf("Average Daily Occupancy Rate:"+ averageOccupancyRate);
+        double averageProfit = totalProfit / 12.0;
+        System.out.printf("Total Profit:"+totalProfit);
+        System.out.printf("Average Monthly Profit:"+averageProfit);
 
-        if (averageOccupancyRate >= 80) {
-            System.out.println("High Occupancy Rate");
+        if (monthsAbove10000 > 6) {
+            System.out.println("Profitable Year");
         } else {
-            System.out.println("Low Occupancy Rate");
+            System.out.println("Need for Growth");
         }
 
-       
+      
     }
 }
