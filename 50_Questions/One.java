@@ -1,30 +1,42 @@
 import java.util.Scanner;
 
-public class One{
+public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double[] monthlyProfits = new double[12];
-        double totalProfit = 0;
-        int monthsAbove10000 = 0;
+        int[][] workHours = new int[25][20];
+        int employeesWithComplianceIssue = 0;
 
-        for (int i = 0; i < 12; i++) {
-            System.out.print("Profit for Month " + (i + 1) + ": ");
-            monthlyProfits[i] = scanner.nextDouble();
-            totalProfit += monthlyProfits[i];
-            if (monthlyProfits[i] > 10000) {
-                monthsAbove10000++;
+        for (int i = 0; i < 25; i++) {
+            System.out.println("Enter work hours for Employee " + (i + 1) + " over 20 days:");
+            boolean lessThan6Hours = false;
+            int totalHours = 0;
+            for (int j = 0; j < 20; j++) {
+                workHours[i][j] = scanner.nextInt();
+                totalHours += workHours[i][j];
+                if (workHours[i][j] < 6) {
+                    lessThan6Hours = true;
+                }
+            }
+            if (lessThan6Hours) {
+                employeesWithComplianceIssue++;
             }
         }
 
-        double averageProfit = totalProfit / 12.0;
-        System.out.printf("Total Profit:"+totalProfit);
-        System.out.printf("Average Monthly Profit:"+averageProfit);
+        System.out.println("Total and Average Work Hours for Each Employee:");
+        for (int i = 0; i < 25; i++) {
+            int totalHours = 0;
+            for (int j = 0; j < 20; j++) {
+                totalHours += workHours[i][j];
+            }
+            double averageHours = totalHours / 20.0;
+            System.out.printf("Employee" + (i + 1) +"Total Hours = "+totalHours+" Average Hours ="+ averageHours);
+        }
 
-        if (monthsAbove10000 > 6) {
-            System.out.println("Profitable Year");
+        if ((employeesWithComplianceIssue / 25.0) > 0.50) {
+            System.out.println("Work Hour Compliance Issue");
         } else {
-            System.out.println("Need for Growth");
+            System.out.println("Good Compliance");
         }
 
       
