@@ -4,49 +4,42 @@ public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[][] attendance = new int[40][26];
-        int[] daysPresent = new int[40];
-        int perfectAttendanceCount = 0;
-        int employeesAbove20Days = 0;
+        int[][] steps = new int[25][30];
+        int[] totalSteps = new int[25];
+        int[] daysMetGoal = new int[25];
+        int participantsMetGoal = 0;
 
-        
-        System.out.println("Enter attendance for 40 employees over 26 days (1 for present, 0 for absent):");
-        for (int i = 0; i < 40; i++) {
-            System.out.println("Enter attendance for Employee " + (i + 1) + ": ");
-            for (int j = 0; j < 26; j++) {
-                attendance[i][j] = scanner.nextInt();
-                if (attendance[i][j] == 1) {
-                    daysPresent[i]++;
+       
+        System.out.println("Enter daily steps for 25 participants over 30 days:");
+        for (int i = 0; i < 25; i++) {
+            System.out.println("Enter steps for Participant " + (i + 1) + ":");
+            for (int j = 0; j < 30; j++) {
+                steps[i][j] = scanner.nextInt();
+                totalSteps[i] += steps[i][j];
+                if (steps[i][j] >= 10000) {
+                    daysMetGoal[i]++;
                 }
             }
         }
 
-        
-        for (int i = 0; i < 40; i++) {
-            if (daysPresent[i] == 26) {
-                perfectAttendanceCount++;
-            }
-            if (daysPresent[i] > 20) {
-                employeesAbove20Days++;
+       
+        System.out.println("Total and Average Steps for each Participant:");
+        for (int i = 0; i < 25; i++) {
+            double averageSteps = totalSteps[i] / 30.0;
+            System.out.println("Participant " + (i + 1) + ": Total Steps = " + totalSteps[i] + 
+                               ", Average Steps = " + averageSteps);
+            if (daysMetGoal[i] >= 20) {
+                participantsMetGoal++;
             }
         }
 
         
-        System.out.println("Total Days Present for each Employee:");
-        for (int i = 0; i < 40; i++) {
-            System.out.println("Employee " + (i + 1) + ": " + daysPresent[i] + " days");
-        }
-
-        
-        System.out.println("Number of employees with perfect attendance (26 days): " + perfectAttendanceCount);
-
-        
-        if ((employeesAbove20Days / 40.0) >= 0.8) {
-            System.out.println("Satisfactory Attendance");
+        if ((participantsMetGoal / 25.0) > 0.7) {
+            System.out.println("Great Effort!");
         } else {
-            System.out.println("Attendance Needs Improvement");
+            System.out.println("Keep Pushing.");
         }
 
-        scanner.close();
+      
     }
 }
