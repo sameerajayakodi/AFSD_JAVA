@@ -1,31 +1,29 @@
 import java.util.Scanner;
 
-public class One{
+public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[][] exerciseTime = new int[20][30];
-        int participantsMeetingGoal = 0;
+        int numStudents = 50;
+        int[] improvements = new int[numStudents];
+        int studentsImproved = 0;
 
-        for (int i = 0; i < 20; i++) {
-            int totalMinutes = 0;
-            System.out.println("Enter daily exercise time (in minutes) for Participant " + (i + 1) + ":");
-            for (int j = 0; j < 30; j++) {
-                exerciseTime[i][j] = scanner.nextInt();
-                totalMinutes += exerciseTime[i][j];
-            }
-            double averageMinutes = totalMinutes / 30.0;
-            if (averageMinutes >= 30) {
-                participantsMeetingGoal++;
+        for (int i = 0; i < numStudents; i++) {
+            System.out.print("Enter grade for Exam 1 for Student " + (i + 1) + ": ");
+            int grade1 = scanner.nextInt();
+            System.out.print("Enter grade for Exam 2 for Student " + (i + 1) + ": ");
+            int grade2 = scanner.nextInt();
+            if (grade2 > grade1) {
+                studentsImproved++;
             }
         }
 
-        if ((participantsMeetingGoal / 20.0) > 0.70) {
-            System.out.println("Successful Fitness Challenge");
+        if ((studentsImproved / (double) numStudents) > 0.70) {
+            System.out.println("Good Academic Progress");
         } else {
-            System.out.println("Challenge Not Fully Achieved");
+            System.out.println("Needs More Attention");
         }
 
-        
+       
     }
 }
