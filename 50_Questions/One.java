@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class One {
+public class One{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -9,7 +9,7 @@ public class One {
 
         for (int i = 0; i < 20; i++) {
             int totalMinutes = 0;
-            System.out.println("Enter daily exercise time (in minutes) for Participant " + (i + 1));
+            System.out.println("Enter daily exercise time (in minutes) for Participant " + (i + 1) + ":");
             for (int j = 0; j < 30; j++) {
                 exerciseTime[i][j] = scanner.nextInt();
                 totalMinutes += exerciseTime[i][j];
