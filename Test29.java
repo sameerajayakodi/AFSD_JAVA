@@ -13,7 +13,7 @@ class Test29 {
     public static void greeting() {
         Calendar c = Calendar.getInstance(); 
         int hour = c.get(Calendar.HOUR_OF_DAY);
-        
+        System.out.println(hour);
         if(hour < 12) {
             System.out.println("Good Morning");
         } else if (hour >= 12 && hour < 15) {
