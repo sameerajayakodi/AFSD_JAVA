@@ -4,7 +4,7 @@ public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-       import java.util.Scanner;
+       
         
         int [] physicsFirstExam = new int[35];
         int [] physicsSecondExam = new int[35];
