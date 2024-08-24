@@ -3,7 +3,10 @@ class Test28{
 	public static void main(String [] args){
 		saveData();
 		saveData();
+		
 	}
+	
+	
 	// ()--> parameter bracket
 	// {} --> method scope
 	public static void saveData(){
