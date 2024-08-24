@@ -1,29 +1,22 @@
-
 import java.util.Scanner;
 
-class Test30 {
+class Test31 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] array = new int[8];
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Enter Number " + (i + 1) + " : ");
-            array[i] = sc.nextInt();
+        int[] data = {45, 12, 34, 56, 78, 42, 67};
+        int[] result = reverseArray(data);
+
+        
+        System.out.print("Reversed array: ");
+        for (int i : result) {
+            System.out.print(i + " ");
         }
-
-        System.out.print("Enter Number what you want to search: ");
-        int key = sc.nextInt();
-
-        searchElement(array, key);
     }
 
-    public static void searchElement(int[] array, int key) {
-        boolean isAvailable = false;
-        for (int i :array) {
-            if (i == key) {
-                isAvailable = true;
-                break;
-            }
+    public static int[] reverseArray(int[] data) {
+        int[] reversedArray = new int[data.length];
+        for (int i = 0; i < data.length; i++) {
+            reversedArray[i] = data[data.length - 1 - i];
         }
-        System.out.println(isAvailable);
+        return reversedArray;
     }
 }
