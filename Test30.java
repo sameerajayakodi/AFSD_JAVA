@@ -1,23 +1,28 @@
-
 import java.util.Scanner;
-import java.util.Calendar;
- 
- 
 
-class Test30{
+class Test30 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter Value 1 : ");
-        int input1 = scanner.nextInt();
-        System.out.print("Enter Value 2 : ");
-        int input2 = scanner.nextInt();
-        
-        getSum(input1,input2);
-        
+        Scanner sc = new Scanner(System.in);
+        int[] array = new int[8];
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Enter Number " + (i + 1) + " : ");
+            array[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter Number what you want to search: ");
+        int key = sc.nextInt();
+
+        searchElement(array, key);
     }
 
-    public static void getSum(int val1,int val2) {
-      int total = val1 + val2;
-      System.out.println("Total = "+total);
+    public static void searchElement(int[] array, int key) {
+        boolean isAvailable = false;
+        for (int i :array) {
+            if (i == key) {
+                isAvailable = true;
+                break;
+            }
+        }
+        System.out.println(isAvailable);
     }
 }
