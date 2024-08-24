@@ -4,24 +4,46 @@ public class One {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numStudents = 50;
-        int[] improvements = new int[numStudents];
-        int studentsImproved = 0;
+       import java.util.Scanner;
+        //physicsFirstExam -- > Reference Variable
+        int [] physicsFirstExam = new int[35];
+        int [] physicsSecondExam = new int[35];
+        int [] chemistryFirstExam = new int[35];
+        int [] chemistrySecondExam = new int[35];
+        
+        int improvementCount = 0;
 
-        for (int i = 0; i < numStudents; i++) {
-            System.out.print("Enter grade for Exam 1 for Student " + (i + 1) + ": ");
-            int grade1 = scanner.nextInt();
-            System.out.print("Enter grade for Exam 2 for Student " + (i + 1) + ": ");
-            int grade2 = scanner.nextInt();
-            if (grade2 > grade1) {
-                studentsImproved++;
+        System.out.println("Enter grades for Physics (First and Second Exams):");
+        for (int i = 0; i < 35; i++) {
+            System.out.print("Student " + (i + 1) + " - Physics First Exam: ");
+            physicsFirstExam[i] = sc.nextInt();
+            System.out.print("Student " + (i + 1) + " - Physics Second Exam: ");
+            physicsSecondExam[i] = sc.nextInt();
+        }
+
+
+        System.out.println("Enter grades for Chemistry (First and Second Exams):");
+        for (int i = 0; i < 35; i++) {
+            System.out.print("Student " + (i + 1) + " - Chemistry First Exam: ");
+            chemistryFirstExam[i] = sc.nextInt();
+            System.out.print("Student " + (i + 1) + " - Chemistry Second Exam: ");
+            chemistrySecondExam[i] = sc.nextInt();
+        }
+
+
+        for (int i = 0; i < 35; i++) {
+            if (physicsSecondExam[i] > physicsFirstExam[i] && chemistrySecondExam[i] > chemistryFirstExam[i]) {
+                improvementCount++;
             }
         }
 
-        if ((studentsImproved / (double) numStudents) > 0.70) {
-            System.out.println("Good Academic Progress");
+        double improvementPercentage = (double) improvementCount / 35 * 100;
+
+
+        if (improvementPercentage > 65) {
+            System.out.println("Consistent Academic Growth");
         } else {
-            System.out.println("Needs More Attention");
+            System.out.println("Inconsistent Academic Progress");
         }
 
        
