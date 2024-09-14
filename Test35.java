@@ -6,15 +6,18 @@ class Test35{
 		anim1.noOfLegs = 4;
 		anim1.favFood = "meet";
 		
-		System.out.println(anim1);
-		Animal anim2 = new Animal(10);
+		
+		Animal anim2 = new Animal();
+		System.out.println(anim2.favFood);
 		
 		Animal anim3 = new Animal("Monkey",12,4,"Banana");
+		System.out.println(anim3.name);
 	} 
 }
 
 
 class Animal{
+	//attributes / instence variables
 	String name;
 	int age;
 	int noOfLegs;
@@ -32,11 +35,21 @@ class Animal{
 		System.out.println("hello");
 	}
 	
-	public Animal(String n , int a , int l,String f){
-		name = n;
-		age = a;
-		noOfLegs = l;
-		favFood = f;
+	//instance Block / using insert default values for instace variables
+	{
+		name = "Sameera Jayakodi";
+		age = 25;
+		noOfLegs = 2;
+		favFood = "Fruits";
+		
+	}
+	
+	public Animal(String name , int age , int noOfLegs,String favFood){
+		//this --> current object copy(anim3)
+		this.name = name;
+		this.age = age;
+		this.noOfLegs = noOfLegs;
+		this.favFood = favFood;
 	}
 	
 	public Animal(int a){
