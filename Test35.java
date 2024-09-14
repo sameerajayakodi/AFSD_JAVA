@@ -8,6 +8,8 @@ class Test35{
 		
 		System.out.println(anim1);
 		Animal anim2 = new Animal(10);
+		
+		Animal anim3 = new Animal("Monkey",12,4,"Banana");
 	} 
 }
 
@@ -30,8 +32,11 @@ class Animal{
 		System.out.println("hello");
 	}
 	
-	public Animal(String name){
-		
+	public Animal(String n , int a , int l,String f){
+		name = n;
+		age = a;
+		noOfLegs = l;
+		favFood = f;
 	}
 	
 	public Animal(int a){
