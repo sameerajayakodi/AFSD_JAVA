@@ -44,6 +44,11 @@ class Animal{
 		
 	}
 	
+	//static block - using insert default values for static variables
+	static{
+		System.out.println("Ayubovan");
+	}
+	
 	public Animal(String name , int age , int noOfLegs,String favFood){
 		//this --> current object copy(anim3)
 		this.name = name;
