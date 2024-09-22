@@ -4,6 +4,11 @@ class Test35{
 		int x = 10;
 		int y = 20;
 		
+		 
+		 y = y -x;
+		 x =  y + x;
+		
+		
 	}
 	
 	}
