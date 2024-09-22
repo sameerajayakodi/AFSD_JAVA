@@ -9,7 +9,8 @@ class Test35{
 		 x =  y + x;
 		
 		
-		System.out.println();
+		System.out.println(x);
+		System.out.println(y);
 		
 	}
 	
