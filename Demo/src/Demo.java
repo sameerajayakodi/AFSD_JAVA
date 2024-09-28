@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Demo {
@@ -11,5 +12,13 @@ public class Demo {
        s1.setMark(80);
 
        System.out.println( " Name  : "+  s1.getName() + "| Age :  " + s1.getAge() + "| Mark :  " + s1.getMark());
+
+       Animal animal  = new Animal("lion",25,"meet");
+
+
+        Object v1 = new Car();
+        Object v2 = new Vehicle();
+
+        System.out.println(v1);
     }
 }
