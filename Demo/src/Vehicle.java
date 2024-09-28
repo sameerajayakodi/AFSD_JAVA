@@ -1,7 +1,17 @@
-public class Vehicle {
+public class Vehicle extends Company {
     private String brand;
     private String model;
     private String color;
+
+    public Vehicle() {
+    }
+
+
+    public Vehicle(String brand, String model, String color) {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+    }
 
     public String getBrand() {
         return brand;
