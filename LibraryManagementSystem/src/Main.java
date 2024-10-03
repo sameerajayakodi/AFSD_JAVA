@@ -93,9 +93,10 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.print("Enter the book title to search by author: ");
-                    title = sc.nextLine();
-                    libraryManager.searchBooksByAuthor(title);
+                    System.out.print("Enter the book author to search by author: ");
+                    author = sc.nextLine();
+                    sc.nextLine();
+                    libraryManager.searchBooksByAuthor(author);
                     break;
 
                 case 6:
