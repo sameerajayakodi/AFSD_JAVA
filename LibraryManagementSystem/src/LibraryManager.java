@@ -43,16 +43,14 @@ public class LibraryManager {
             }
         }
     }
-    public void searchBooksByAuthor(String title) {
-        boolean found = false;
+    public void searchBooksByAuthor(String author) {
         for (int i = 0; i < bookCount; i++) {
-           if(books[i].getTitle().equals(title)){
-               System.out.println(books[i].getTitle() + " " + books[i].getAuthor());
-               found = true;
-               break;
-           }else {
-               System.out.println("Book not found");
-           }
+            if (books[i].getAuthor().equals(author)) {
+                System.out.println(books[i].getTitle() + " " + books[i].getAuthor() + " " + books[i].getYear());
+
+            }else {
+                System.out.println("Book not found");
+            }
         }
     }
 
