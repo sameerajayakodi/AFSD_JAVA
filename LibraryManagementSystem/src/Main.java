@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean isLogged = false;
@@ -38,6 +37,7 @@ public class Main {
         LibraryManager libraryManager = new LibraryManager();
 
         while (true) {
+
             System.out.println("-----Choose an option-----");
             System.out.println("1. Add Book");
             System.out.println("2. Update Book");
@@ -52,6 +52,7 @@ public class Main {
 
             switch (option) {
                 case 1:
+
                     System.out.print("Enter the book Id: ");
                     bookId = sc.nextInt();
                     sc.nextLine();
@@ -94,8 +95,9 @@ public class Main {
 
                 case 5:
                     System.out.print("Enter the book author to search by author: ");
-                    author = sc.nextLine();
                     sc.nextLine();
+                    author = sc.nextLine();
+
                     libraryManager.searchBooksByAuthor(author);
                     break;
 
