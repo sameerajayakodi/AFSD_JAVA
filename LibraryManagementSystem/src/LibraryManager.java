@@ -1,5 +1,5 @@
 public class LibraryManager {
-    private Book[] books = new Book[100];
+    private final Book[] books = new Book[100];
     private int bookCount = 0;
 
     public void addBook(Book book) {
@@ -36,20 +36,22 @@ public class LibraryManager {
     }
     public void displayAllBooks() {
         for (int i = 0; i < bookCount; i++) {
-            if (bookCount > 0) {
+
                 System.out.println(books[i].getTitle() + " " + books[i].getAuthor() + " " + books[i].getYear());
-            }else{
-                System.out.println("Books not found");
-            }
+
         }
     }
     public void searchBooksByAuthor(String author) {
+        boolean found = false;
         for (int i = 0; i < bookCount; i++) {
             if (books[i].getAuthor().equals(author)) {
                 System.out.println(books[i].getTitle() + " " + books[i].getAuthor() + " " + books[i].getYear());
-
+                found = true;
             }else {
-                System.out.println("Book not found");
+                if (!found){
+                    System.out.println("Book not found");
+                }
+
             }
         }
     }
