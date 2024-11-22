@@ -22,7 +22,7 @@ public class Demo {
         System.out.println(v1);
 
         //abstract class ekakin object ekak hadanna ba
-        //abstract clss type reference variable ekakata sub class object ekak assign karanna puluwan
+        //abstract class type reference variable ekakata sub class object ekak assign karanna puluwan
         //compile time ekedi compiler balanne Demo1 demo = new Demo2() meke wam paththe Demo1 eke thiyana method name eka witharai run weddi Demo2 eke method eka run wenawa
         Demo1 demo = new Demo2();
         demo.Play();
@@ -31,17 +31,17 @@ public class Demo {
 
         //Anonymous inner class , class eka penne na but methods overide wela thiyenne
         //interface ekaka thiyana methods override karanna puluwan class ekak nathiwa anonymous class ekak use karala
-        Demo3 demo3 = new Demo3() {
-            @Override
-            public void saveEmployee() {
+       Demo3 demo3 = new Demo3() {
+           @Override
+           public void saveEmployee() {
 
-            }
+           }
 
-            @Override
-            public void deleteEmployee() {
+           @Override
+           public void deleteEmployee() {
 
-            }
-        };
+           }
+       };
 
         demo3.deleteEmployee();
         demo3.saveEmployee();
