@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sameera.controller.MainPageController">
+   <children>
+      <Button fx:id="service" layoutX="154.0" layoutY="214.0" mnemonicParsing="false" onAction="#serviceAction" prefHeight="30.0" prefWidth="291.0" style="-fx-background-color: #563A9C; -fx-text-fill: white; -fx-border-radius: 10; -fx-background-radius: 10;" text="Students" />
+      <Button fx:id="book" layoutX="154.0" layoutY="169.0" mnemonicParsing="false" onAction="#bookAction" prefHeight="30.0" prefWidth="291.0" style="-fx-background-color: #563A9C; -fx-text-fill: white; -fx-border-radius: 10; -fx-background-radius: 10;" text="Books" />
+   </children>
+</AnchorPane>
