@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sameera.controller.LoadBookFormController">
+   <children>
+      <Label layoutX="223.0" layoutY="27.0" text="View All Books" textFill="#8b5dff">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tdlBook" layoutX="16.0" layoutY="89.0" prefHeight="295.0" prefWidth="566.0">
+        <columns>
+          <TableColumn prefWidth="25.60003662109375" text="ID" />
+          <TableColumn prefWidth="181.5999755859375" text="Title" />
+            <TableColumn prefWidth="159.20001220703125" text="Author" />
+            <TableColumn prefWidth="132.800048828125" text="ISBN" />
+            <TableColumn prefWidth="70.39996337890625" text="Price" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
