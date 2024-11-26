@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sameera.controller.SaveBookFormController">
+   <children>
+      <Label layoutX="188.0" layoutY="34.0" text="Save Book Data Form" textFill="#8b5dff">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTitle" layoutX="154.0" layoutY="101.0" prefHeight="30.0" prefWidth="291.0" promptText="Enter Book Title" style="-fx-border-color: #563A9C; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtAuthor" layoutX="154.0" layoutY="144.0" prefHeight="30.0" prefWidth="291.0" promptText="Enter Author Name" style="-fx-border-color: #563A9C; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtISBN" layoutX="154.0" layoutY="185.0" prefHeight="30.0" prefWidth="291.0" promptText="Enter ISBN " style="-fx-border-color: #563A9C; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="txtPrice" layoutX="153.0" layoutY="224.0" prefHeight="30.0" prefWidth="291.0" promptText="Enter Book Price" style="-fx-border-color: #563A9C; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <Button fx:id="loginButton" layoutX="154.0" layoutY="267.0" mnemonicParsing="false" onAction="#saveDetails" prefHeight="30.0" prefWidth="291.0" style="-fx-background-color: #563A9C; -fx-text-fill: white; -fx-border-radius: 10; -fx-background-radius: 10;" text="Save Book Deatails" />
+      <Label layoutX="80.0" layoutY="107.0" text="Book Title :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="67.0" layoutY="150.0" text="Book Author : ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="108.0" layoutY="191.0" text="ISBN : ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="77.0" layoutY="230.0" text="Book Price : ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="updateButton" layoutX="154.0" layoutY="310.0" mnemonicParsing="false" onAction="#updateDetails" prefHeight="30.0" prefWidth="291.0" style="-fx-background-color: #563A9C; -fx-text-fill: white; -fx-border-radius: 10; -fx-background-radius: 10;" text="Update Book Deatails" />
+   </children>
+</AnchorPane>
