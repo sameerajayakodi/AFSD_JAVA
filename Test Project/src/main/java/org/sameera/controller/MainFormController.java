@@ -40,7 +40,7 @@ public class MainFormController {
 
 
             try {
-                Parent mainPageRoot = FXMLLoader.load(getClass().getResource("/view/SaveBookForm.fxml"));
+                Parent mainPageRoot = FXMLLoader.load(getClass().getResource("/view/MainPage.fxml"));
                 Stage stage = (Stage) loginButton.getScene().getWindow();
                 stage.setScene(new Scene(mainPageRoot));
                 stage.show();
