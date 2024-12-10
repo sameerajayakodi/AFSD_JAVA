@@ -8,6 +8,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.sameera.dto.BookDto;
+import org.sameera.model.BookModel;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -30,9 +32,10 @@ public class SaveBookFormController {
         String title = txtTitle.getText().trim();
         String author = txtAuthor.getText().trim();
         String isbn = txtISBN.getText().trim();
-        String priceText = txtPrice.getText().trim();
+        double priceText = Double.parseDouble(txtPrice.getText().trim());
 
 
+        BookModel.saveBook(new BookDto(title,author,isbn,priceText));
 
         }
 
