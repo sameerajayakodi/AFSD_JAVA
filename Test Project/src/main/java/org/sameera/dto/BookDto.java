@@ -16,6 +16,13 @@ public class BookDto {
         this.price = price;
     }
 
+    public BookDto(String title, String author, String isbn, double price) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
