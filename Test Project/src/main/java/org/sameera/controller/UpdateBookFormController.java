@@ -32,57 +32,6 @@ public class UpdateBookFormController {
         try {
             forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "acpt");
-            PreparedStatement preparedStatement = connection.prepareStatement("update book set title = ?, author = ?, isbn = ?, price = ? where id = ?");
-            preparedStatement.setObject(1, title);
-            preparedStatement.setObject(2, author);
-            preparedStatement.setObject(3, isbn);
-            preparedStatement.setObject(4, price);
-            preparedStatement.setObject(5, id);
-
-            int i = preparedStatement.executeUpdate();
-            if (i > 0) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Updated");
-                alert.setContentText("Book Update successfully.");
-                alert.show();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Failure");
-                alert.setContentText("Failed to update the book.");
-                alert.show();
-            }
-
-
-            txtTitle.clear();
-            txtAuthor.clear();
-            txtISBN.clear();
-            txtPrice.clear();
-
-        } catch (ClassNotFoundException | SQLException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Database Error");
-            alert.setContentText("An error occurred while saving the book: " + e.getMessage());
-            alert.show();
-        }
-
-
-        System.out.println("update button pressed");
-
-    }
-
-    public void cancel(ActionEvent actionEvent) {
-        txtId.clear();
-        txtTitle.clear();
-        txtAuthor.clear();
-        txtISBN.clear();
-        txtPrice.clear();
-    }
-
-    public void SearchBook(ActionEvent actionEvent) {
-        int id = Integer.parseInt(txtId.getText());
-        try {
-            forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "acpt");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from book where id = ?");
             preparedStatement.setObject(1, id);
 
