@@ -28,30 +28,40 @@ public class DepartmentController {
             DepartmentModel.saveDepartment(departmentDTO);
         }
 
-        public Department getDepartmentById(Long id) {
-            Department department = DepartmentModel.getDepartmentById(id);
-            if (department != null) {
-                System.out.println("Retrieved Department: " + department);
-            } else {
-                System.out.println("Department with ID " + id + " not found.");
-            }
-            return department;
-        }
+    // Get All Departments
+    public static void getAllDepartments() {
+        List<Department> departments = DepartmentModel.getAllDepartments();
+        departments.forEach(System.out::println);
+    }
 
-        public void updateDepartment(Department department) {
-            DepartmentModel.updateDepartment(department);
-            System.out.println("Department updated successfully: " + department);
-        }
+    // Update Department
+    public static void updateDepartment() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter department ID to update: ");
+        Long id = scanner.nextLong();
+        scanner.nextLine(); // Consume the newline
 
-        public void deleteDepartment(Long id) {
-            DepartmentModel.deleteDepartment(id);
-            System.out.println("Department with ID " + id + " deleted successfully.");
-        }
+        System.out.print("Enter updated name: ");
+        String name = scanner.nextLine();
 
-        // Uncomment if needed
-//    public List<Department> getAllDepartments() {
-//        List<Department> departments = departmentModel.getAllDepartments();
-//        System.out.println("Retrieved all departments: " + departments);
-//        return departments;
-//    }
+        System.out.print("Enter updated location: ");
+        String location = scanner.nextLine();
+
+        System.out.print("Enter updated manager: ");
+        String manager = scanner.nextLine();
+
+        System.out.print("Enter updated budget: ");
+        Double budget = scanner.nextDouble();
+
+        DepartmentDTO updatedData = new DepartmentDTO(name, location, manager, budget);
+        DepartmentModel.updateDepartment(id, updatedData);
+    }
+
+    // Delete Department
+    public static void deleteDepartment() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter department ID to delete: ");
+        Long id = scanner.nextLong();
+        DepartmentModel.deleteDepartment(id);
+    }
 }
