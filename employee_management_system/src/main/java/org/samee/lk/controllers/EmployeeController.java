@@ -7,17 +7,16 @@ import org.samee.lk.entity.Employee;
 import org.samee.lk.model.EmployeeModel;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import static org.samee.lk.model.EmployeeModel.saveEmployee;
 
 
 public class EmployeeController {
-    private EmployeeModel employeeModel = new EmployeeModel();
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void createEmployee() {
-        Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter employee name: ");
         String name = scanner.nextLine();
 
@@ -32,38 +31,50 @@ public class EmployeeController {
         String departmentName = scanner.nextLine();
 
         EmployeeDTO employeeDTO = new EmployeeDTO(name, email, salary, departmentName);
-
         EmployeeModel.saveEmployee(employeeDTO);
 
-        System.out.println("Employee created successfully: " + employeeDTO);
+        System.out.println("Employee created successfully!");
     }
 
-
-
-    public Employee getEmployeeById(Long id) {
-        Employee employee = employeeModel.getEmployeeById(id);
-        if (employee != null) {
-            System.out.println("Retrieved Employee: " + employee);
+    public static void getAllEmployees() {
+        List<Employee> employees = EmployeeModel.getAllEmployees();
+        if (employees.isEmpty()) {
+            System.out.println("No employees found.");
         } else {
-            System.out.println("Employee with ID " + id + " not found.");
+            employees.forEach(System.out::println);
         }
-        return employee;
     }
 
-    public void updateEmployee(Employee employee) {
-        employeeModel.updateEmployee(employee);
-        System.out.println("Employee updated successfully: " + employee);
+    public static void updateEmployee() {
+        System.out.print("Enter employee ID to update: ");
+        Long id = scanner.nextLong();
+        scanner.nextLine();
+
+        System.out.print("Enter new employee name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter new employee email: ");
+        String email = scanner.nextLine();
+
+        System.out.print("Enter new employee salary: ");
+        Double salary = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.print("Enter new department name: ");
+        String departmentName = scanner.nextLine();
+
+        EmployeeDTO employeeDTO = new EmployeeDTO(name, email, salary, departmentName);
+        EmployeeModel.updateEmployee(id, employeeDTO);
+
+        System.out.println("Employee updated successfully!");
     }
 
-    public void deleteEmployee(Long id) {
-        employeeModel.deleteEmployee(id);
-        System.out.println("Employee with ID " + id + " deleted successfully.");
-    }
+    public static void deleteEmployee() {
+        System.out.print("Enter employee ID to delete: ");
+        Long id = scanner.nextLong();
+        scanner.nextLine();
 
-    // Uncomment if needed
-//    public List<Employee> getAllEmployees() {
-//        List<Employee> employees = employeeModel.getAllEmployees();
-//        System.out.println("Retrieved all employees: " + employees);
-//        return employees;
-//    }
+        EmployeeModel.deleteEmployee(id);
+        System.out.println("Employee deleted successfully!");
+    }
 }
