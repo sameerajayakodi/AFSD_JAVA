@@ -39,7 +39,7 @@ public class DepartmentController {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter department ID to update: ");
         Long id = scanner.nextLong();
-        scanner.nextLine(); // Consume the newline
+        scanner.nextLine();
 
         System.out.print("Enter updated name: ");
         String name = scanner.nextLine();
