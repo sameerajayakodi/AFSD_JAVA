@@ -1,6 +1,6 @@
 package org.samee.lk.model;
 
-import jakarta.persistence.Query;
+import org.hibernate.query.Query;
 import org.samee.lk.dto.DepartmentDTO;
 import org.samee.lk.entity.Department;
 import org.hibernate.Session;
@@ -27,35 +27,43 @@ public class DepartmentModel {
         }
     }
 
-    public static Department getDepartmentById(Long id) {
+    // Get All Departments
+    public static List<Department> getAllDepartments() {
         try (Session session = sessionFactory.openSession()) {
-            return session.get(Department.class, id);
+            Query<Department> query = session.createQuery("FROM Department", Department.class);
+            return query.getResultList();
         }
     }
 
-    public static void updateDepartment(Department department) {
+    // Update Department
+    public static void updateDepartment(Long id, DepartmentDTO updatedData) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            session.merge(department);
-            session.getTransaction().commit();
+            Department department = session.get(Department.class, id);
+            if (department != null) {
+                department.setName(updatedData.getName());
+                department.setLocation(updatedData.getLocation());
+                department.setManager(updatedData.getManager());
+                department.setBudget(updatedData.getBudget());
+                session.update(department);
+                session.getTransaction().commit();
+            } else {
+                System.out.println("Department not found with ID: " + id);
+            }
         }
     }
-
+    // Delete Department
     public static void deleteDepartment(Long id) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
             Department department = session.get(Department.class, id);
             if (department != null) {
                 session.remove(department);
+                session.getTransaction().commit();
+            } else {
+                System.out.println("Department not found with ID: " + id);
             }
-            session.getTransaction().commit();
         }
     }
 
-//    public List<Department> getAllDepartments() {
-//        try (Session session = sessionFactory.openSession()) {
-//            Query<Department> query = session.createQuery("from Department", Department.class);
-//            return query.list();
-//        }
-//    }
 }
