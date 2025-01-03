@@ -11,10 +11,8 @@ public class DepartmentController {
 
 
         public static void createDepartment() {
-            // Use Scanner to get input from the user
+
             Scanner scanner = new Scanner(System.in);
-
-
             System.out.print("Enter department name: ");
             String name = scanner.nextLine();
 
@@ -26,11 +24,7 @@ public class DepartmentController {
 
             System.out.print("Enter department budget: ");
             Double budget = scanner.nextDouble();
-
-
             DepartmentDTO departmentDTO = new DepartmentDTO(name, location, manager, budget);
-
-
             DepartmentModel.saveDepartment(departmentDTO);
         }
 

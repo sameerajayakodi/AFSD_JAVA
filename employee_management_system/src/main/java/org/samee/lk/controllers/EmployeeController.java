@@ -26,15 +26,13 @@ public class EmployeeController {
 
         System.out.print("Enter employee salary: ");
         Double salary = scanner.nextDouble();
-        scanner.nextLine(); // Consume the remaining newline
+        scanner.nextLine();
 
         System.out.print("Enter department name: ");
         String departmentName = scanner.nextLine();
 
-        // Create EmployeeDTO
         EmployeeDTO employeeDTO = new EmployeeDTO(name, email, salary, departmentName);
 
-        // Send DTO to the model for processing
         EmployeeModel.saveEmployee(employeeDTO);
 
         System.out.println("Employee created successfully: " + employeeDTO);
