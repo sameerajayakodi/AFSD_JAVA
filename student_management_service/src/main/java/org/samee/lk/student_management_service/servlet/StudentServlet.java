@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-
+//context path
 @WebServlet(name="studentApi", value = "/student/*")
 
 public class StudentServlet extends HttpServlet {
@@ -32,6 +32,7 @@ public class StudentServlet extends HttpServlet {
 
         switch (pathInfo) {
             case "/get-all-student" :
+
                 List<StudentDto> allStudents = studentService.getAllStudents();
                 resp.getWriter().write("all Students");
                 objectMapper.writeValue(resp.getWriter(), allStudents);
