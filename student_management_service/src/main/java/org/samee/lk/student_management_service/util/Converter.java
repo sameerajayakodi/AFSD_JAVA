@@ -5,7 +5,7 @@ import org.samee.lk.student_management_service.dto.StudentDto;
 import org.samee.lk.student_management_service.entity.Student;
 
 public class Converter {
-    private ModelMapper modelMapper;
+    private ModelMapper modelMapper ;
 
     public Converter() {
         this.modelMapper = new ModelMapper();
